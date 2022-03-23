@@ -1,5 +1,60 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9106011391777514228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c762d37243e1b6244a0bb86ec9f4aeb7, type: 3}
+  m_Name: AScatteringRendererFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    IsEnabled: 1
+    WhenToInsert: 500
+    MaterialToBlit: {fileID: 2100000, guid: 85be4b2653820b249ab2578fcccb07dd, type: 2}
+    scatteringStrength: 2
+    waveLengths: {x: 700, y: 530, z: 460}
+--- !u!114 &-2755254038090989756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36f8f0a214daef43b12b9f626fd4e6f, type: 3}
+  m_Name: AtmosphericScatteringFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    blitMaterial: {fileID: 2100000, guid: 68118f9435d7c624b86dac74a92b43e3, type: 2}
+    blitMaterialPassIndex: -1
+    sourceType: 0
+    destinationType: 0
+    sourceTextureId: _SourceTexture
+    destinationTextureId: _DestinationTexture
+    opticalDepthCompute: {fileID: 0}
+    textureSize: 256
+    inScatteringPoints: 8
+    opticalDepthPoints: 8
+    densityFalloff: 11.61
+    atmosphereHeight: 1.1
+    planetLocation: {x: 0, y: -12720000, z: 0}
+    planetSize: 6360000
+    scatteringStrength: 2.4
+    waveLengths: {x: 700, y: 530, z: 460}
+    lightPower: 0.43
+    lightScattering: 0.844
+    lightDistance: 368
+    lightStepSize: 1
+    depthDistance: 10000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,8 +69,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
-  m_RendererFeatures: []
-  m_RendererFeatureMap: 
+  m_RendererFeatures:
+  - {fileID: -2755254038090989756}
+  m_RendererFeatureMap: 443fa0e10c5fc3d9
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -31,7 +87,7 @@ MonoBehaviour:
     coreBlitColorAndDepthPS: {fileID: 4800000, guid: d104b2fc1ca6445babb8e90b0758136b, type: 3}
     cameraMotionVector: {fileID: 4800000, guid: c56b7e0d4c7cb484e959caeeedae9bbf, type: 3}
     objectMotionVector: {fileID: 4800000, guid: 7b3ede40266cd49a395def176e1bc486, type: 3}
-  m_AssetVersion: 1
+  m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -46,9 +102,44 @@ MonoBehaviour:
     failOperation: 0
     zFailOperation: 0
   m_ShadowTransparentReceive: 1
-  m_RenderingMode: 1
+  m_RenderingMode: 0
   m_DepthPrimingMode: 0
+  m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 1
   m_ClusteredRendering: 0
-  m_TileSize: 32
-  m_IntermediateTextureMode: 0
+--- !u!114 &6030338936047164754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e34d8fda87303498a8603b29291d72, type: 3}
+  m_Name: AtmosphericScatteringFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    blitMaterial: {fileID: 2100000, guid: 1ff7e1ca700d3a84fb3eaef011acd6d7, type: 2}
+    blitMaterialPassIndex: -1
+    sourceType: 0
+    destinationType: 0
+    sourceTextureId: _SourceTexture
+    destinationTextureId: _DestinationTexture
+    opticalDepthCompute: {fileID: 0}
+    textureSize: 256
+    inScatteringPoints: 10
+    opticalDepthPoints: 10
+    densityFalloff: 12
+    atmosphereHeight: 1.1
+    planetLocation: {x: 0, y: -12720000, z: 0}
+    planetSize: 6360000
+    scatteringStrength: 2
+    waveLengths: {x: 700, y: 530, z: 460}
+    lightPower: 1
+    lightScattering: 0.7
+    lightDistance: 100
+    lightStepSize: 1
+    depthDistance: 500

@@ -9,3 +9,5 @@ Temp/
 *.sln
 Builds
 *.apk
+Library
+Logs

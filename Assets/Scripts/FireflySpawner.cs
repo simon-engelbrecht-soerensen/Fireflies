@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public struct PosNormPair
 {
@@ -11,29 +13,37 @@ public class FireflySpawner : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject fireflyPrefab;
-    public Transform spawnOnMesh;
+    public List<SpawnOnMesh> spawnOnMeshes;
     public int count;
+
+    [Serializable]
+    public class SpawnOnMesh{
+        public int count;
+        public Transform trans;
+    }
     void Awake()
-    { 
-        var parent = new GameObject().transform;
-        parent.position = spawnOnMesh.position;
-
-        for (int i = 0; i < count; i++)
+    {
+        foreach (var mesh in spawnOnMeshes)
         {
+            var parent = new GameObject().transform;
+            parent.position = mesh.trans.position;
+
+            for (int i = 0; i < mesh.count; i++)
+            {
+                var fly = Instantiate(fireflyPrefab, parent);
+                var pN = GetRandomPointOnMesh(mesh.trans.GetComponentInChildren<MeshFilter>().sharedMesh);
+                fly.transform.position = pN.pos + mesh.trans.position + (pN.normal * 0.1f);
+                fly.GetComponent<FireflyBehaviour>().normalAtSpot = pN.normal;
+            }
+                // var temp = Vector3.Scale(fly.transform.position, spawnOnMesh.transform.lossyScale) ;
+                // temp = spawnOnMesh.transform.position;
+                // fly.transform.position = temp;
            
-            var fly = Instantiate(fireflyPrefab, parent);
-            var pN = GetRandomPointOnMesh(spawnOnMesh.GetComponentInChildren<MeshFilter>().sharedMesh);
-            fly.transform.position = pN.pos + spawnOnMesh.transform.position + (pN.normal * 0.1f);
-            fly.GetComponent<FireflyBehaviour>().normalAtSpot = pN.normal;
-            // var temp = Vector3.Scale(fly.transform.position, spawnOnMesh.transform.lossyScale) ;
-            // temp = spawnOnMesh.transform.position;
-            // fly.transform.position = temp;
+
+                parent.transform.localScale = mesh.trans.localScale;
+                // parent.transform.position -= spawnOnMesh.transform.position;
+                parent.transform.rotation = mesh.trans.rotation;
         }
-
-        parent.transform.localScale = spawnOnMesh.transform.localScale;
-        // parent.transform.position -= spawnOnMesh.transform.position;
-        parent.transform.rotation = spawnOnMesh.transform.rotation;
-
     }
 
     
