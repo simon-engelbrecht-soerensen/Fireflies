@@ -106,7 +106,7 @@ MonoBehaviour:
   m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 1
-  m_ClusteredRendering: 0
+  m_ClusteredRendering: 1
 --- !u!114 &6030338936047164754
 MonoBehaviour:
   m_ObjectHideFlags: 0

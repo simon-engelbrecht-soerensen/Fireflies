@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stationaryDuration: 5
   pointLight: {fileID: 2947841161906528107}
+  normalAtSpot: {x: 0, y: 0, z: 0}
 --- !u!1 &2947841161906528105
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +96,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.7465022, b: 0, a: 1}
   m_Intensity: 0.61
-  m_Range: 1.08
+  m_Range: 5.19
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

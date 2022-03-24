@@ -32,7 +32,7 @@ public class FireflySpawner : MonoBehaviour
             {
                 var fly = Instantiate(fireflyPrefab, parent);
                 var pN = GetRandomPointOnMesh(mesh.trans.GetComponentInChildren<MeshFilter>().sharedMesh);
-                fly.transform.position = pN.pos + mesh.trans.position + (pN.normal * 0.1f);
+                fly.transform.position = pN.pos + mesh.trans.position + (pN.normal * 0.5f);
                 fly.GetComponent<FireflyBehaviour>().normalAtSpot = pN.normal;
             }
                 // var temp = Vector3.Scale(fly.transform.position, spawnOnMesh.transform.lossyScale) ;
@@ -40,7 +40,7 @@ public class FireflySpawner : MonoBehaviour
                 // fly.transform.position = temp;
            
 
-                parent.transform.localScale = mesh.trans.localScale;
+                // parent.transform.localScale = mesh.trans.localScale;
                 // parent.transform.position -= spawnOnMesh.transform.position;
                 parent.transform.rotation = mesh.trans.rotation;
         }
