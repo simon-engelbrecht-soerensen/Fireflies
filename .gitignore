@@ -11,3 +11,6 @@ Builds
 *.apk
 Library
 Logs
+UserSettings
+*.csproj
+*.sln
