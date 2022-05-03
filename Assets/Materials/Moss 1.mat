@@ -102,9 +102,9 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _MossAngle: 8.69
-    - _MossNoiseScale: 0.5
-    - _NoisePower: 0.2
+    - _MossAngle: 16.6
+    - _MossNoiseScale: 0.25
+    - _NoisePower: 3.15
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -116,7 +116,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TimePower: 0.5
+    - _TimePower: 5.82
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

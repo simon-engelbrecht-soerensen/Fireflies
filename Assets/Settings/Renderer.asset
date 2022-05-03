@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    renderPassEvent: 500
+    renderPassEvent: 450
     blitMaterial: {fileID: 2100000, guid: 68118f9435d7c624b86dac74a92b43e3, type: 2}
     blitMaterialPassIndex: -1
     sourceType: 0
@@ -73,10 +73,10 @@ MonoBehaviour:
     planetSize: 6360000
     scatteringStrength: 2.4
     waveLengths: {x: 700, y: 530, z: 460}
-    lightPower: 0.43
-    lightScattering: 0.818
-    lightDistance: 652
-    lightStepSize: 1
+    lightPower: 0.56
+    lightScattering: 0.792
+    lightDistance: 106
+    lightStepSize: 3
     depthDistance: 10000
 --- !u!114 &11400000
 MonoBehaviour:
@@ -94,8 +94,7 @@ MonoBehaviour:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
   m_RendererFeatures:
   - {fileID: -2755254038090989756}
-  - {fileID: -5160998065549735019}
-  m_RendererFeatureMap: 443fa0e10c5fc3d9950b6e809a7360b8
+  m_RendererFeatureMap: 443fa0e10c5fc3d9
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -106,6 +105,7 @@ MonoBehaviour:
     samplingPS: {fileID: 4800000, guid: 04c410c9937594faa893a11dceb85f7e, type: 3}
     stencilDeferredPS: {fileID: 4800000, guid: e9155b26e1bc55942a41e518703fe304, type: 3}
     fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
+    fallbackLoadingPS: {fileID: 4800000, guid: 7f888aff2ac86494babad1c2c5daeee2, type: 3}
     materialErrorPS: {fileID: 4800000, guid: 5fd9a8feb75a4b5894c241777f519d4e, type: 3}
     coreBlitPS: {fileID: 4800000, guid: 93446b5c5339d4f00b85c159e1159b7c, type: 3}
     coreBlitColorAndDepthPS: {fileID: 4800000, guid: d104b2fc1ca6445babb8e90b0758136b, type: 3}
@@ -126,11 +126,11 @@ MonoBehaviour:
     failOperation: 0
     zFailOperation: 0
   m_ShadowTransparentReceive: 1
-  m_RenderingMode: 0
+  m_RenderingMode: 2
   m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 1
-  m_ClusteredRendering: 1
+  m_IntermediateTextureMode: 1
 --- !u!114 &6030338936047164754
 MonoBehaviour:
   m_ObjectHideFlags: 0

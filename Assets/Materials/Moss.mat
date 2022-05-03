@@ -103,7 +103,7 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _MossAngle: 8.69
-    - _MossNoiseScale: 0.5
+    - _MossNoiseScale: 4.04
     - _NoisePower: 0.2
     - _OcclusionStrength: 1
     - _Parallax: 0.005

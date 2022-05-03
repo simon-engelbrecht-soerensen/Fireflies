@@ -31,10 +31,10 @@ public class FireflyBehaviour : MonoBehaviour
 
     void Start()
     {
-        pointLight.intensity = Random.Range(0f, 2f);
-        pointLight.range = Random.Range(5f, 10f);
+        pointLight.intensity = Random.Range(8f, 15f);
+        pointLight.range = Random.Range(5f, 20f);
         DoSpiral();
-        pointLight.DOIntensity(0, Random.Range(3, 10)).SetLoops(-1, LoopType.Yoyo);
+        pointLight.DOIntensity(0, Random.Range(3, 20)).SetLoops(-1, LoopType.Yoyo);
         // pointLight.DOIntensity()
         startPos = transform.position;
         rnd = Random.Range(0.5f, 3);
