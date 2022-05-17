@@ -368,11 +368,11 @@ Shader "Universal Render Pipeline/Custom/AScattering2"
                     float3 rayPos = wPos + rayDir * distTravelled;
                     // float3 rayPos2 = wPos + rayDir * distTravelled2 ;
 
-                    if(ShadowAtten(rayPos) > 0.01 &&  distTravelled < dist) 
-                    {
+                    // if(ShadowAtten(rayPos) > 0.01 &&  distTravelled < dist) 
+                    // {
 
                     	sunPow += (ComputeScattering(dot(rayDir, sunDir)));
-                    }					
+                    // }					
 
 					distTravelled += _LightStepSize ;
 
@@ -388,18 +388,18 @@ Shader "Universal Render Pipeline/Custom/AScattering2"
                     
                 }
 				
-				while(distTravelled2 < _ShadowSteps )
-                {
-                    float3 rayPos2 = wPos + rayDir * distTravelled2 ;
-    
-     
-				 	if(ShadowAtten(rayPos2) < 0.01 &&  distTravelled2 < dist)
-				 	{
-				 		sunPow -= (ComputeScattering(dot(rayDir, sunDir))) * _VolumetricShadowPower;
-				 	}
-					
-                    distTravelled2 += _ShadowStepSize;                    
-                }
+				// while(distTravelled2 < _ShadowSteps )
+    //             {
+    //                 float3 rayPos2 = wPos + rayDir * distTravelled2 ;
+    //
+    //  
+				//  	if(ShadowAtten(rayPos2) < 0.01 &&  distTravelled2 < dist)
+				//  	{
+				//  		sunPow -= (ComputeScattering(dot(rayDir, sunDir))) * _VolumetricShadowPower;
+				//  	}
+				// 	
+    //                 distTravelled2 += _ShadowStepSize;                    
+    //             }
 				
 				sunPow/= _LightDistance/_LightPower;
 				sunPow = clamp(sunPow, 0, 99);
